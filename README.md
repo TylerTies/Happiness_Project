@@ -127,9 +127,9 @@ Algorithms: Decision Tree; Random Forest; Multiple Regression; SMOTE
 
 ---------------------------------------------------------------------------
 
-### Recommendation for future analysis
+### Recommendations for future analysis
 
-- We could explore future machine learning models
+- We could explore additional machine learning models
 - Additional data sets:
 	- Average nightly hours of sleep
 	- Literacy rates
