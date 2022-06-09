@@ -115,12 +115,35 @@ Algorithms: Decision Tree; Random Forest; Multiple Regression; SMOTE
 
 ---------------------------------------------------------------------------
 
+### Results of Analysis
 
+- Happier countries had...
+	- Less screen time
+	- Higher female alcohol consumption
+	- Higher covid test availability but also more cases
+	- Higher median age
+- Surprises
+	- Generosity and Suicide rate didn't seem to have much correlation with happiness
 
 ---------------------------------------------------------------------------
 
+### Recommendation for future analysis
+
+- We could explore future machine learning models
+- Additional data sets:
+	- Average nightly hours of sleep
+	- Literacy rates
+	- Pet ownership percentages
+	- Social media adoption
+
 ---------------------------------------------------------------------------
 
+### What would we have done differently
+
+- Build the database portion in MS SQL Server for ease of use
+- Find larger, more complete datasets.  We could possibly include additional years to increase dataset size as well.
+
+---------------------------------------------------------------------------
 **Data Sources:**
  - [World Happiness Data](https://www.kaggle.com/datasets/ajaypalsinghlo/world-happiness-report-2021)
  - [Covid Data](https://ourworldindata.org/covid-cases)
