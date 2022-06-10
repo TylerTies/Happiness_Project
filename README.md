@@ -76,16 +76,16 @@ Algorithms: Decision Tree; Random Forest; Multiple Regression; SMOTE
  
 **Explanation of model choice, including limitations and benefits:**
 
-* Our first attempt to create an accurate predictive model involved the use of the decision tree. At first the default parameters for splitting the data (75% train and 25% test) were used. However, this produced a very low accuracy score. The model was then rerun with splitting the data between 80% train and 20% test. This did increase the accuracy score slightly to 40%, however, this may cause an overfitting issue when running the same predictive model on new data.  For the third attempt at increasing the accuracy for the decisions tree, we used SMOTE to attempt to correct the imbalance in the dataset prior to re-running the model. Model split did not change (80% train and 20% test). This did bring the accuracy score to 58.3%. We still are checking to see if there are any additional ways to bring up the accuracy score for this model.
+* Our first attempt to create an accurate predictive model involved the use of the decision tree. At first the default parameters for splitting the data (75% train and 25% test) were used. However, this produced a very low accuracy score. The model was then rerun with splitting the data between 80% train and 20% test. This did increase the accuracy score slightly to 40%, however, this may cause an overfitting issue when running the same predictive model on new data.  For the third attempt at increasing the accuracy for the decisions tree, we used SMOTE to attempt to correct the imbalance in the dataset prior to re-running the model. Model split did not change (80% train and 20% test). This did bring the accuracy score to 58.3%. The confusion matrix below shows our model is  best at predicting happiness score of 3  correctly but struggles the most with predicting happiness score of 7 correctly.
 
 	![image](https://user-images.githubusercontent.com/26393180/171965722-780aecab-1747-4113-9bf5-716a16b7f994.png)
 
 
-* Since the decision tree shows a very low accuracy score, this may be an indication of a week model due to the dataset being too small. To account for this issue and attempt to strengthen the model, Random Forest was chosen to be our next predictive model. Prior to balancing the data by using SMOTE, the accuracy score was 45.4%. When running SMOTE prior to running the Random Forest model, the accuracy score jumped up to 67.0%. We still are checking to see if there are any additional ways to bring up the accuracy score for this model.
+* Since the decision tree shows a very low accuracy score, this may be an indication of a week model due to the dataset being too small. To account for this issue and attempt to strengthen the model, Random Forest was chosen to be our next predictive model. Prior to balancing the data by using SMOTE, the accuracy score was 45.4%. When running SMOTE prior to running the Random Forest model, the accuracy score jumped up to 67.0%. The confusion matrix below shows our model is best at predicting happiness score of 3 and 4 correctly. However, for this model only one actual happiness score of 4 was used for this predictive model. Because of this, I would be cautious with attempting to predicted actual happiness scores of 4 correctly when using this model. 
 
 	![image](https://user-images.githubusercontent.com/26393180/171966433-34ddc790-49bd-4e46-90a3-6ab3d2dbed97.png)
 
-* To see if we can find a model that is even more accurate, R was used to create a predictive model using multiple regression. Default perameters were used to split the data between train and test. Our final predictive model for multiple regression shows an accuracy score of 75.8% with five variables being statistically signification: freedom, social_support, percept_corrupt, meat_consumption and generosity. Between the three models, multiple regression is the best predictive model to predict happiness scores.
+* To see if we can find a model that is even more accurate, R was used to create a predictive model using multiple regression. Default perameters were used to split the data between train and test. Our final predictive model for multiple regression shows an accuracy score of 75.8% with five variables being statistically signification: freedom, social_support, percept_corrupt, meat_consumption and generosity. Between the three models, multiple regression is the best predictive model to predict happiness scores. The confusion matrix below shows our model is best at predicting happiness scores of 4 and 7 correctly. This model struggled the most with predicting the happiness score of 3 correctly. 
 
 	![image](https://user-images.githubusercontent.com/26393180/172069204-1831ae81-a433-487b-8b2e-42d0f3b63f26.png)
 	
@@ -98,15 +98,6 @@ Algorithms: Decision Tree; Random Forest; Multiple Regression; SMOTE
 ------------------------------------------------------------------------------
 
 ### Dashboard
-
-**Storyboard on a Google Slide(s):**
-
-[Google Slides Storyboard](https://docs.google.com/presentation/d/1Ko_ZfZzVwHrFdawHIv6q_K8g7W08cQ5EWS1CUCs4c8I/edit?usp=sharing)
-
-
-**Description of the tool(s) that will be used to create the final dashboard:**
-
-Dashboard has been created and Published on Tableau Public
 
 [World Happiness Dashboard](https://public.tableau.com/app/profile/christina.elenbaas/viz/Happiness_AWS/WorldHappiness)
 
@@ -124,12 +115,35 @@ Dashboard has been created and Published on Tableau Public
 
 ---------------------------------------------------------------------------
 
+### Results of Analysis
 
+- Happier countries had...
+	- Less screen time
+	- Higher female alcohol consumption
+	- Higher covid test availability but also more cases
+	- Higher median age
+- Surprises
+	- Generosity and Suicide rate didn't seem to have much correlation with happiness
 
 ---------------------------------------------------------------------------
 
+### Recommendations for future analysis
+
+- We could explore additional machine learning models
+- Additional data sets:
+	- Average nightly hours of sleep
+	- Literacy rates
+	- Pet ownership percentages
+	- Social media adoption
+
 ---------------------------------------------------------------------------
 
+### What would we have done differently
+
+- Build the database portion in MS SQL Server for ease of use
+- Find larger, more complete datasets.  We could possibly include additional years to increase dataset size as well.
+
+---------------------------------------------------------------------------
 **Data Sources:**
  - [World Happiness Data](https://www.kaggle.com/datasets/ajaypalsinghlo/world-happiness-report-2021)
  - [Covid Data](https://ourworldindata.org/covid-cases)
@@ -137,142 +151,11 @@ Dashboard has been created and Published on Tableau Public
  - [Meat Consumption, Median Age, Suicide Rate](https://www.kaggle.com/datasets/daniboy370/world-data-by-country-2020)
  - [Land Use and Density](https://data.world/jst5th/country-population-land-area-density)
  - [Average Screen Time](https://www.comparitech.com/tv-streaming/screen-time-statistics/)
+ 
+**Machine Learning Code Rescources:**
+ - https://statisticsglobe.com/plot-predicted-vs-actual-values-in-r
+ - https://www.kaggle.com/code/rafjaa/dealing-with-very-small-datasets/notebook
+ - https://www.stackvidhya.com/plot-confusion-matrix-in-python-and-why/ 
+
 
 ----------------------------------------------------------------------
------------------------------------------------------------------------------
-
-## Checklist (Segment 3)
-
-### Presentation
- - ~~Select Topic~~
- - ~~Reason for selected topic~~
- - ~~Description of the source of the data~~
- - ~~Questions we hope to answer with the data~~
- - ~~Description of the data exploration phase of the project~~
- - ~~Description of the analysis phase of the project~~
- - ~~Technologies, languages, tools, and algorithms used throughout the project~~
- - ~~**Slides**~~
-     * ~~Presentation is drafted in google slides~~
-
-### GitHub Repository
- -  **Main Branch**
-     *  ~~All code necessary to perform exploratory analysis~~
-     *  ~~Some code necessary to complete the machine learning portion of the project~~
-     *  ~~All code is production ready~~
- -  **README.md**
-     *  remove description of communication protocols
-     *  ~~Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)~~
-     *  ~~Google Slides Link:~~
- -  **Individual Branches**
-     *  ~~At least one branch for Each team member~~
-     *  ~~Each team member has at least four commits for the duration of the second segment~~
-
-### Machine Learning Model
- - ~~Description of data preprocessing~~
- - ~~Description of feature engineering and feature selection, including the decision-making process~~
- - ~~Description of how data was split into training and testing sets~~
- -  ~~Explanation of model choice, including limitations and benefits~~
- -  ~~Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)~~
- -  ~~Description of how they have trained the model thus far, and any additional training that will take place~~
- -  ~~Description of current accuracy score~~
-
-### Database Integration
-  <There are no deliverables for the database integration section of the project for this segment.>
-
-### Dashboard
- - ~~Images from the initial analysis~~
- - ~~Data (images or report) from the machine learning task~~
- - ~~At least one interactive element~~
- - ~~The dashboard presents a data story that is logical and easy to follow for someone unfamiliar with the topic. It includes the following:~~
-
-
------------------------------------------------------------------------------
-
-## Checklist (Segment 2)
-
-### Presentation
- - ~~Select Topic~~
- - ~~Reason for selected topic~~
- - ~~Description of the source of the data~~
- - ~~Questions we hope to answer with the data~~
- - ~~Description of the data exploration phase of the project~~
- - ~~Description of the analysis phase of the project~~
-
-### GitHub Repository
- -  **Main Branch**
-     *  ~~All code necessary to perform exploratory analysis~~
-     *  ~~Some code necessary to complete the machine learning portion of the project~~
- -  **README.md**
-     *  ~~includes description of communication protocols~~
-     *  ~~Includes outline of the project (may include images but should be easy to follow)~~
- -  **Individual Branches**
-     *  ~~At least one branch for Each team member~~
-     *  ~~Each team member has at least four commits for the duration of the second segment~~
-
-### Machine Learning Model
- - ~~Description of preliminary data preprocessing~~
- - ~~Description of preliminary feature engineering and preliminary feature selection, including the decision-making process~~
- - ~~Description of how data was split into training and testing sets~~
- -  ~~Explanation of model choice, including limitations and benefits~~
-
-### Database Integration
-  - ~~Database stores static data for use during the project~~
-  - ~~Database interfaces with the project in some format (e.g., scraping updates the database)~~
-  - ~~Includes at least two tables (or collections, if using MongoDB)~~
-  - ~~Includes at least one join using the database language (not including any joins in Pandas)~~
-  - ~~Includes at least one connection string (using SQLAlchemy or PyMongo)~~
-
-### Dashboard
- - ~~Storyboard on a Google Slide(s): https://docs.google.com/presentation/d/1Ko_ZfZzVwHrFdawHIv6q_K8g7W08cQ5EWS1CUCs4c8I/edit?usp=sharing~~
- - ~~Description of the tool(s) that will be used to create the final dashboard~~
- - ~~Description of interactive element(s)~~
-
-------------------------------------------------------------------------
-
-## Checklist (Segment 1)
-
-### Presentation
- - ~~Select Topic~~
- - ~~Reason for selected topic~~
- - ~~Descripiton of the source of the data~~
- - ~~Questions we hope to answer with the data~~
-
-### GitHub Repository
- -  **Main Branch**
-     *  ~~Main branch includes README.md~~
- -  **README.md**
-     *  ~~README.md includes description of communication protocols~~
- -  **Individual Branches**
-     *  ~~At least one branch for Each team member~~
-     *  ~~Each team member has at least four commits for the duration of the first segment~~
-
-### Machine Learning Model
- - ~~Takes in data from the provisional database~~
- - ~~Outputs label for input data~~
-
-### Database Integration
-  - ~~Sample data that mimics the expected final database structure or schema~~
-  - ~~Draft machine learning model is connected to the provisional database~~
-
-### Dashboard
- - <Nothing>
-
-
-
-## Final Deliverable Outline
-- Project Overview
-- Usage and installation instructions of libraries/tools that are used
-- Intro (business question and motivation)
-- Group by world geographic regions: 
-	* Which region had the highest happiness scores overall during 2021? (Bar Graph?)
-	* What variables have the strongest impact on happiness scores for each region? (correlation plot)
-	* How has the happiness score changed overtime for each region? (plot mean, maybe line plot?)
-  	* Is there a way to predict happiness scores based on the 7 variables provided? If so, what model can be used to accurately predict happiness? (Try Multiple Regression, Decision Tree and Random Forest) 
-- Data pre-processing/gathering steps (cleaning and manipulation)
-- Visuals and explanations
-- Machine Learning / Deep Learning Modeling
-- Additional explanations
-- Major findings
-- Conclusion
-- References
-- Team Members
